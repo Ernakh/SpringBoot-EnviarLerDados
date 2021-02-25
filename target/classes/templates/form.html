@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <form action="#" th:action="@{/}" th:object="${pessoaModel}" method="post">
+            <table>
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" th:field="*{nome}" /></td>
+                    <td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">Nome inválido</td>
+                </tr>
+                <tr>
+                    <td>Idade:</td>
+                    <td><input type="text" th:field="*{idade}" /></td>
+                    <td th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}">Idade inválida</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Salvar</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
